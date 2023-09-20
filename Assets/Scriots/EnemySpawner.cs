@@ -4,8 +4,9 @@ using Random = System.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private int _spawnDirectionInDegrees = 45;
     [SerializeField] private float _spawnTime = 2f;
-    [SerializeField] private GameObject _enemyPrefab;
+    [SerializeField] private Enemy _enemyPrefab;
 
     private SpawnPoint[] _spawnPoints = new SpawnPoint[0];
     private Random _random = new Random();
@@ -32,7 +33,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy(SpawnPoint spawnPiont)
     {
-        spawnPiont.Spawn(_enemyPrefab);
+        Quaternion spawnDirection = Quaternion.Euler(0, _spawnDirectionInDegrees, 0);
+        Instantiate(_enemyPrefab, spawnPiont.transform.position, spawnDirection);
     }
 
     private void OnDisable()
