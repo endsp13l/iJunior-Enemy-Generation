@@ -19,9 +19,11 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator DelaySpawn()
     {
+        WaitForSeconds spawnDelay = new WaitForSeconds(_spawnTime);
+
         while (true)
         {
-            yield return new WaitForSeconds(_spawnTime);
+            yield return spawnDelay;
             SpawnEnemy(GetRandomSpawnPoint());
         }
     }
