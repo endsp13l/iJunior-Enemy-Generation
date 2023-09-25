@@ -111,4 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 2073272274485767694, guid: ce68aec617476bd4f83daf22e3dd3012, type: 3}
-  _speed: 3
+  _speed: 10

@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy(SpawnPoint spawnPoint)
     {
         Enemy enemy = Instantiate(spawnPoint.Enemy, spawnPoint.transform.position, Quaternion.identity);
-        enemy.transform.LookAt(spawnPoint.Target);
+        enemy.SetTarget(spawnPoint.Target);
     }
 
     private void OnDisable()

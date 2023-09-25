@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _speed = 3f;
 
-    private float _lifeTime = 10f;
+    private Transform _target;
+    private float _lifeTime = 30f;
 
     private void Start()
     {
@@ -13,6 +14,12 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+        Vector3 direction = _target.position - transform.position;
+        transform.Translate(direction.normalized * _speed * Time.deltaTime);
+    }
+
+    public void SetTarget(Transform target)
+    {
+        _target = target;
     }
 }

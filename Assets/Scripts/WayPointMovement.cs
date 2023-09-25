@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class WayPointMovement : MonoBehaviour
 {
-    [SerializeField] Transform _path;
-    [SerializeField] private float _speed = 3f;
+    [SerializeField] private Transform _path;
+    [SerializeField] private float _speed = 10f;
 
     private Transform[] _wayPoints;
     private int _currentWayPointIndex = 0;
